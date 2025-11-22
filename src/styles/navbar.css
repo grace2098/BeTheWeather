@@ -1,0 +1,28 @@
+button img{
+    width: 25px;
+    object-fit: fill;
+}
+button{
+    border: none;
+    /* margin: 10px; */
+    cursor: pointer;
+    padding: 0 0;
+    background-color: var(--card);
+}
+.nav{
+    display: flex;
+    height: 100%;
+    width: 80px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+}
+.main-elements{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+

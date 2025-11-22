@@ -1,0 +1,39 @@
+.wind-compass-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.compass-circle {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--bg);
+  border-radius: 50%;
+  position: relative;
+}
+
+.compass-arrow {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 15px solid red;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform-origin: 50% 75%;
+  transform: translate(-50%, -50%) rotate(0deg); /* default rotation */
+}
+
+.compass-label {
+  position: absolute;
+  font-size: 10px;
+}
+
+.compass-label.n { top: 2px; left: 50%; transform: translateX(-50%); }
+.compass-label.s { bottom: 2px; left: 50%; transform: translateX(-50%); }
+.compass-label.e { right: 2px; top: 50%; transform: translateY(-50%); }
+.compass-label.w { left: 2px; top: 50%; transform: translateY(-50%); }
+.description p{
+    font-size: 13px;
+}

@@ -1,0 +1,28 @@
+.today{
+    width: 500px;
+    background-color: var(--card);
+    height: auto;
+    padding: 18px 20px;
+    border-radius: 15px;
+    font-size: 19px;
+}
+.headoftheday{
+    display: flex;
+    justify-content: space-between;
+}
+.temptoday{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 37px;
+    padding: 10px;
+    margin-top: -20px;
+    color: var(--accent);
+}
+.footeroftheday{
+    display: flex;
+    justify-content: space-between;
+}
+.highandlow{
+    display: flex;
+}

@@ -1,0 +1,15 @@
+.object p{
+    font-size: 13px ;
+}
+.object{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--bg);
+    margin-bottom: 3px;
+}
+.humidity{
+    width: 150px;
+    background-color:var(--accent);
+    padding: 10px 10px;
+    border-radius:10px;
+}

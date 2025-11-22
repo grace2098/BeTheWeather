@@ -1,0 +1,23 @@
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+        padding: 0 10px;
+}
+.greeting{
+    width: 350px;
+    height: 50px;
+     background-color: var(--card);
+     border-radius: 50px;
+     display: flex;
+     align-items: center;
+     font-size: 20px;
+     /* gap: 20px; */
+     padding: 0 10px;
+}
+p{
+    
+    /* font-weight: 600; */
+    display: flex;
+}

@@ -1,0 +1,35 @@
+.cylinder {
+  display: flex;
+  flex-direction: column; /* stack time, icon, temp */
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  gap: 5px;
+  height: 110px;
+  background-color: var(--accent);
+  border-radius: 50px; /* <-- this makes it pill/cylinder */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
+  color: var(--text) ;
+  /* transition: transform 0.2s ease, box-shadow 0.2s ease; */
+}
+
+/* .cylinder:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+} */
+
+.time {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin: 4px 0;
+}
+
+.temp {
+  font-weight: bold;
+  font-size: 15px;
+}

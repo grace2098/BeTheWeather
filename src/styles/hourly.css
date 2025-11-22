@@ -1,0 +1,52 @@
+.weathercylinder{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+   
+}
+/* .todayweek{
+    display: flex;
+    position: relative;
+} */
+.todays{
+    position: absolute;
+    top: 125px;
+    left: 15px;
+    /* writing-mode: vertical-rl; */
+    /* text-orientation: upright; */
+    /* letter-spacing: 0; */
+    transform: rotate(-90deg);
+    transform-origin:left top;
+    white-space: nowrap;
+}
+/* .todays h1{
+    display: inline-block;
+    transform: scaleX(-1);
+    font-size: 1rem;
+} */
+.hour{
+    width: 500px;
+    background-color: var(--card);
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px;
+    gap: 13px;
+    border-radius: 15px;
+    position: relative;
+}
+.tomorrow{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--accent);
+    padding: 10px 20px;
+    border-radius: 15px; 
+}
+.tomorrow p{
+    font-size: 13px;
+}
+.tomorrow h2{
+    font-size: 2rem;
+}

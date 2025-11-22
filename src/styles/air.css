@@ -1,0 +1,25 @@
+.airqualities{
+    width:390px;
+    background-color: var(--card);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 20px;
+    border-radius: 15px;
+
+}
+.chart{
+    margin-right: 33px ;
+}
+.extras{
+    display: flex;
+    gap: 30px;
+}
+.compass{
+    background-color: var(--accent);
+    padding: 25px;
+    /* height: 80px; */
+    border-radius:15px;
+}
