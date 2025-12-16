@@ -1,14 +1,22 @@
 .cities{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
 }
 .tempofcities{
     background-color: var(--card);
-    padding: 13px 10px;
-   
-    margin-top:11px;
+    padding: 10px 10px;
+   width: 450px;
+    height: 214px;
+    /* margin-top:11px; */
     border-radius: 15px;
     
+}
+.double-city {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .city p{
     font-size: 13px;
@@ -16,9 +24,49 @@
 .city{
     background-color: var(--accent);
     padding: 5px 10px;
+    width: 120px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
+}
+@media(max-width:750px){
+       .tempofcities{
+        width: 100%;
+         padding: 10px 10px;
+         font-size: 19px;
+           height: 200px;
+    }
+    .city{
+        height: 70px;
+    }
+  
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .cities {
+    gap: 8px;
+  }
+
+  .tempofcities {
+    width: 100%;
+    height: 200px;
+    padding: 12px;
+  }
+
+  .double-city {
+    gap: 8px;
+  }
+
+  .city {
+    width: 110px;
+    height: 70px;
+    padding: 6px 8px;
+  }
+
+  .city p {
+    font-size: 12px;
+  }
 }

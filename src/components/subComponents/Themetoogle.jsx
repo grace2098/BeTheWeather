@@ -1,27 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { GiMoonOrbit, GiNightSleep } from "react-icons/gi";
+import { ThemeContext } from "../../context/ThemeContext";
+import '../../styles/theme.css';
 
-import '../../styles/theme.css'
 const Themetoogle = () => {
-    const [isDark, setIsDark]= useState(false);
-
-    const handleClick = () => {
-    setIsDark(!isDark);
-  };
-      useEffect(() => {
-      if (isDark) {
-        document.body.classList.add("dark");
-        document.body.classList.remove("light");
-      } else {
-        document.body.classList.add("light");
-        document.body.classList.remove("dark");
-      }
-    }, [isDark]);
+  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <div className='theme' onClick={handleClick}>
-      <div className={`slider-image ${isDark ? "slide" : ""}`}>
-           {isDark ? (
+    <div className='theme' onClick={toggleTheme}>
+      <div className={`slider-image ${isDarkTheme ? "slide" : ""}`}>
+           {isDarkTheme ? (
             <GiMoonOrbit size={28} color="var(--accent)" />
           ) : (
             <GiNightSleep size={28} color="var(--accent)" />

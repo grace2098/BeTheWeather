@@ -1,28 +1,89 @@
-button img{
-    width: 25px;
-    object-fit: fill;
+.the-main-elementbtnsimg {
+  width: 25px;
+  object-fit: fill;
 }
-button{
-    border: none;
-    /* margin: 10px; */
-    cursor: pointer;
-    padding: 0 0;
-    background-color: var(--card);
-}
-.nav{
+.the-main-elementbtns {
+  border: none;
+  /* margin: 10px; */
+  cursor: pointer;
+  padding: 0 0;
     display: flex;
-    height: 100%;
-    width: 80px;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--card);
-    padding: 20px;
-    border-radius: 10px;
+  flex-direction: column; 
+  align-items: center;
+  background-color: var(--card);
+  transition: transform 0.3s ease;
 }
-.main-elements{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.the-main-elementbtns:hover{
+ transform: scale(1.50);
+
+}
+.nav-container{
+  height: 100%;
+  position: relative;
+}
+.nav {
+  display: flex;
+  height: 92%;
+  width: 80px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  
+}
+.main-elements {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.elements{
+  display: none;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+    background-color: var(--card);
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top: 1px solid var(--text);
+    border-top-right-radius: 10px;
 }
 
+.nav-label {
+  font-size: 0.5rem;
+  color: var(--accent);
+  margin-top: 4px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(-5px); 
+  pointer-events: none;
+}
+
+.the-main-elementbtns:focus .nav-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width:750px){
+  .elements{
+    display: flex;
+    z-index: 50000;
+  }
+  .nav{
+    display: none;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+}
+@media (min-width: 768px) and (max-width: 1024px){
+  .nav{
+    height: 100%;
+     width: 40px;
+  }
+}

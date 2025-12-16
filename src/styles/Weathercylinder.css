@@ -1,13 +1,13 @@
 .cylinder {
   display: flex;
-  flex-direction: column; /* stack time, icon, temp */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 50px;
   gap: 5px;
   height: 110px;
   background-color: var(--accent);
-  border-radius: 50px; /* <-- this makes it pill/cylinder */
+  border-radius: 50px; 
   /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
   color: var(--text) ;
   /* transition: transform 0.2s ease, box-shadow 0.2s ease; */

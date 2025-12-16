@@ -22,7 +22,7 @@
   top: 48%;
   left: 50%;
   transform-origin: 50% 75%;
-  transform: translate(-50%, -50%) rotate(0deg); /* default rotation */
+  transform: translate(-50%, -50%) rotate(0deg); 
 }
 
 .compass-label {
