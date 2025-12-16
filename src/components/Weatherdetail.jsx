@@ -1,6 +1,6 @@
 import React from 'react'
 import Hourforcastlinechart from './subComponents/Hourforcastlinechart'
-import Compass from './subComponents/compass'
+import Compass from './subComponents/Compass'
 // import Humidity from './subComponents/Humidity'
 import '../styles/air.css'
 import { SearchContext } from "../components/SearchContext";
