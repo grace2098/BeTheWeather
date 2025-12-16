@@ -20,44 +20,42 @@ const Signup = () => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  
   const handleSignUp = async (e) => {
-      
     e.preventDefault();
-  
-  let tempErrors = {};
-  if (!form.fullname) tempErrors.fullname = "Full Name is required";
-  if (!form.email) tempErrors.email = "Email is required";
-  if (!form.password) tempErrors.password = "Password is required";
-  if (form.password !== form.confirmPassword) 
-    tempErrors.confirmPassword = "Passwords do not match";
 
-  setErrors(tempErrors);
+    let tempErrors = {};
+    if (!form.fullname) tempErrors.fullname = "Full Name is required";
+    if (!form.email) tempErrors.email = "Email is required";
+    if (!form.password) tempErrors.password = "Password is required";
+    if (form.password !== form.confirmPassword)
+      tempErrors.confirmPassword = "Passwords do not match";
 
+    setErrors(tempErrors);
 
-  if (Object.keys(tempErrors).length > 0) return;
+    if (Object.keys(tempErrors).length > 0) return;
 
-  try {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      form.email,
-      form.password
-    );
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        form.email,
+        form.password
+      );
 
-    const user = userCredential.user;
-    await setDoc(doc(db, "Users", user.uid), {
-      email: form.email,
-      fullName: form.fullname,
-    });
+      const user = userCredential.user;
+      await setDoc(doc(db, "Users", user.uid), {
+        email: form.email,
+        fullName: form.fullname,
+      });
 
-    toast.success("Signup successful 🎉"),{
-            style: { background: "var(--bg)", color: "var(--text)" },
-        }
-    navigate("/App");
-  } catch (error) {
-    toast.error(error.message);
-  }
-};
+      toast.success("Signup successful 🎉"),
+        {
+          style: { background: "var(--bg)", color: "var(--text)" },
+        };
+      navigate("/App");
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
   return (
     <div className="auth-container">
@@ -73,7 +71,7 @@ const Signup = () => {
               type="text"
               placeholder="Joe Doe"
               value={form.fullname}
-                 onChange={(e) => setForm({ ...form, fullname: e.target.value })}
+              onChange={(e) => setForm({ ...form, fullname: e.target.value })}
             />
             {errors.fullname && <p className="error">{errors.fullname}</p>}
             <label>Email</label>
@@ -89,19 +87,25 @@ const Signup = () => {
               type="password"
               placeholder="•••••••"
               value={form.password}
-               onChange={(e) => setForm({ ...form, email: e.target.value })}
+              onChange={(e) => setForm({ ...form, password: e.target.value })}
             />
-            {errors.email && <p className="error">{errors.email}</p>}
+            {errors.password && <p className="error">{errors.password}</p>}
             <label>Confirm Password</label>
             <input
               type="password"
               placeholder="•••••••"
               value={form.confirmPassword}
-     onChange={(e) => setForm({ ...form, password: e.target.value })}
+              onChange={(e) =>
+                setForm({ ...form, confirmPassword: e.target.value })
+              }
             />
-            {errors.password && <p className="error">{errors.password}</p>}
+            {errors.confirmPassword && (
+              <p className="error">{errors.confirmPassword}</p>
+            )}
           </div>
-          <button className="btn-primary" type="submit">Sign Up</button>
+          <button className="btn-primary" type="submit">
+            Sign Up
+          </button>
           <p className="switch">
             Already have an account? <Link to="/login">Login</Link>
           </p>
