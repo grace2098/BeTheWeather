@@ -30,7 +30,7 @@ const Login = () => {
         );
         console.log("logged in");
         navigate("/App")
-        toast.success("Log-in successful 🎉"),{
+        toast.success("Log-in successful "),{
             style: { background: "var(--bg)", color: "var(--text)" },
         }
         

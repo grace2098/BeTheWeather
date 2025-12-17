@@ -47,7 +47,7 @@ const Signup = () => {
         fullName: form.fullname,
       });
 
-      toast.success("Signup successful 🎉"),
+      toast.success("Signup successful "),
         {
           style: { background: "var(--bg)", color: "var(--text)" },
         };
