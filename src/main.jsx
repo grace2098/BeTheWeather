@@ -1,8 +1,9 @@
 import React, { useEffect, useContext } from "react";
 import ReactDOM from "react-dom/client";
 import {
-  createBrowserRouter,
-  RouterProvider,
+  HashRouter, 
+  Routes, 
+  Route,
   Navigate,
 } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -15,36 +16,32 @@ import { auth } from "./pages/Firebase";
 import { ThemeProvider, ThemeContext } from "./context/ThemeContext"
 
 const Root = () => {
-  const [user, setUser] = useState(null);
-   const { isDarkTheme } = useContext(ThemeContext);
-  // const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState(null);
+  const { isDarkTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setUser(user);
-      // setLoading(false);
     });
     return () => unsubscribe();
   }, []);
-useEffect(() => {
-  document.body.className = isDarkTheme ? "dark-theme" : "light-theme";
-}, [isDarkTheme]);
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: user ? <Navigate to="/app" /> : <Signup />,
-    },
-    { path: "login", element: <Login /> },
-    { path: "signup", element: <Signup /> },
-    { path: "app", element: <App /> },
-  ]);
+  useEffect(() => {
+    document.body.className = isDarkTheme ? "dark-theme" : "light-theme";
+  }, [isDarkTheme]);
   return (
-    <>
-      <RouterProvider router={router} />
-      <ToastContainer
-      theme={isDarkTheme ? "dark" : "light"}/>
-    </>
+      <HashRouter>
+      <Routes>
+        <Route path="/" element={user ? <Navigate to="/app" /> : <Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/app" element={<App />} />
+        {/* Optional: catch all unmatched routes */}
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+
+      <ToastContainer theme={isDarkTheme ? "dark" : "light"} />
+    </HashRouter>
   );
 };
 
