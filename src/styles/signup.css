@@ -25,7 +25,7 @@ body.dark {
   justify-content: center;
 }
 .themechangers {
-  margin-top: 1%;
+  margin-top: 2%;
 }
 body {
   background: var(--bg);
@@ -139,7 +139,14 @@ body {
   .auth-card h1 {
     font-size: 1.7rem;
   }
-
+ .auth-container{
+    flex-direction: column-reverse;
+     /* align-items: center; */
+     padding: 0 10px;
+ }
+ .auth-session{
+  margin-top: -6%;
+ }
   .input-group input {
     padding: 12px;
   }
